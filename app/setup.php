@@ -122,3 +122,27 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+
+add_filter('nav_menu_css_class', function ($classes, $item, $args) {
+    if (property_exists($args, 'list_item_class')) {
+        $classes[] = $args->list_item_class;
+    }
+    return $classes;
+}, 1, 3);
+
+
+
+add_filter(
+    'nav_menu_link_attributes',
+    function ($atts, $item, $args) {
+
+        if (property_exists($args, 'link_class')) {
+            $atts['class'] = $args->link_class;
+        }
+        error_log(print_r($atts, true));
+        return $atts;
+    },
+    1,
+    3
+);

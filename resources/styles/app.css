@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --primary-color: #1d4ed8;
+    --primary-dark: #172554;
+    --primary-light: #93c5fd;
+    --white: #fff;
+  }
+
+.btn{
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
